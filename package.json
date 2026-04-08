@@ -1,0 +1,42 @@
+{
+  "name": "cumulative-voting",
+  "version": "1.0.0",
+  "description": "집중투표제 시 회사측 보유 주식으로 선임할 이사 수 계산기",
+  "keywords": [],
+  "homepage": "https://github.com/LeeJaeHyekk/Calculation-of-minimum-number-of-shares-required-for-cumulative-voting#readme",
+  "bugs": {
+    "url": "https://github.com/LeeJaeHyekk/Calculation-of-minimum-number-of-shares-required-for-cumulative-voting/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeeJaeHyekk/Calculation-of-minimum-number-of-shares-required-for-cumulative-voting.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.3.12"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vite": "^5.1.0",
+    "vitest": "^4.1.2"
+  }
+}
