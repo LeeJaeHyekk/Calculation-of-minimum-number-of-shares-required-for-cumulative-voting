@@ -1,11 +1,19 @@
 export interface CumulativeVotingInput {
-  targetDirectors: number; // N
-  totalShares: number; // S
-  totalDirectors: number; // D
+  totalShares: number; // N
+  ownedShares: number; // M
+  totalDirectors: number; // T
+}
+
+export interface CumulativeVotingResultRow {
+  r: number;
+  requiredShares: number;
+  status: "충족" | "부족";
+  diff: number;
 }
 
 export interface CumulativeVotingResult {
-  minShares: number;
+  rows: CumulativeVotingResultRow[];
+  maxGuaranteedSeats: number;
 }
 
 // 타입 가드: 숫자인지 확인
@@ -18,15 +26,14 @@ export function validateCumulativeVotingInput(
   input: Partial<CumulativeVotingInput>,
 ): input is CumulativeVotingInput {
   return (
-    input.targetDirectors !== undefined &&
     input.totalShares !== undefined &&
+    input.ownedShares !== undefined &&
     input.totalDirectors !== undefined &&
-    isValidNumber(input.targetDirectors) &&
     isValidNumber(input.totalShares) &&
+    isValidNumber(input.ownedShares) &&
     isValidNumber(input.totalDirectors) &&
-    input.targetDirectors >= 1 &&
     input.totalShares >= 1 &&
-    input.totalDirectors >= 1 &&
-    input.targetDirectors <= input.totalDirectors
+    input.ownedShares >= 1 &&
+    input.totalDirectors >= 1
   );
 }
